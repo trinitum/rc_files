@@ -1,0 +1,14 @@
+[user]
+	name = [%full_name%]
+	email = [%email_address%]
+[push]
+	default = current
+[color]
+	ui = auto
+[alias]
+	br = branch
+	bra = branch -a
+	co = checkout
+	ci = commit
+	st = status
+	gr = log --pretty=\"format:%h %an %s\" --graph
