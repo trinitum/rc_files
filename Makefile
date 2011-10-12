@@ -1,8 +1,7 @@
 RCFILES=bashrc bash_profile gitconfig gitignore indent.pro inputrc perltidyrc screenrc
-EMAIL:=nobody <noemail>
 
 default:
-	@echo "run make install -DEMAIL="name <e-mail>" if you want to install"
+	@echo "run make install EMAIL="name <e-mail>" if you want to install"
 	exit 1
 
 install:
