@@ -1,1 +1,4 @@
--l 100
+-l 100 	# 100 characters per line
+-nolq   # --nooutdent-long-lines
+-nasc   # --noadd-semicolons
+-ndsm   # --nodelete-semicolons
