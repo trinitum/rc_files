@@ -46,4 +46,4 @@ if [ "$PS1" ]; then
 	    ;;
     esac
 fi
-source ~/perl5/perlbrew/etc/bashrc
+[ -f ~/perl5/perlbrew/etc/bashrc ] && source ~/perl5/perlbrew/etc/bashrc
