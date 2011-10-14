@@ -5,8 +5,8 @@ default:
 	exit 1
 
 install:
-	NAME=`perl -e'print "$(EMAIL)" =~ /^(.*) <.*$$/'`; \
-	MAIL=`perl -e'print "$(EMAIL)" =~ /<(.*)>/'`; \
+	NAME=`perl -e'print q($(EMAIL)) =~ /^(.*) </'`; \
+	MAIL=`perl -e'print q($(EMAIL)) =~ /<(.*)>/'`; \
 	for file in $(RCFILES); do \
 		cp $$file ~/.$$file; \
 		sed -i "s/\[%full_name%\]/$$NAME/" ~/.$$file; \
