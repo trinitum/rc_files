@@ -34,6 +34,7 @@ if [ "$PS1" ]; then
     alias vimrc='vim ~/.bashrc'
     alias src='source ~/.bashrc'
     alias eog='eog 2>/dev/null'
+    alias s='screen -R -D'
     pack() { ps ax | grep "$1"; }
 
     case $TERM in
