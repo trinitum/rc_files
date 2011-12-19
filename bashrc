@@ -37,13 +37,20 @@ if [ "$PS1" ]; then
     alias s='screen -R -D'
     pack() { ps ax | grep "$1"; }
 
+    if declare -f __git_ps1 >/dev/null ; then
+        GIT_BRANCH='$(__git_ps1)'
+    fi
+    GIT_PS1_SHOWDIRTYSTATE='true'
+    GIT_PS1_SHOWSTASHSTATE='true'
+    GIT_PS1_SHOWUNTRACKEDFILES='true'
+
     case $TERM in
         xterm*|rxvt*|linux*|screen*)
-            PS1='\[\033[1;33m\]\!\[\033[1;36m\]\u@\h:\[\033[1;39m\]\w\n\l \[\033[1;36m\]\t \[\033[1;39m\]\$\[\033[0m\] '
+            PS1='\[\033[1;33m\]\!\[\033[1;36m\]\u@\h:\[\033[1;39m\]\w\n\l \[\033[1;36m\]\t'$GIT_BRANCH' \[\033[1;39m\]\$\[\033[0m\] '
             eval `dircolors -b`
 	    ;;
 	*)
-	    PS1='\u@\h:\w \$ '
+	    PS1='\u@\h:\w'$GIT_BRANCH' \$ '
 	    ;;
     esac
 fi
