@@ -46,7 +46,12 @@ if [ "$PS1" ]; then
 
     case $TERM in
         xterm*|rxvt*|linux*|screen*)
-            PS1='\[\033[1;33m\]\!\[\033[1;36m\]\u@\h:\[\033[1;39m\]\w\n\l \[\033[1;36m\]\t'$GIT_BRANCH' \[\033[1;39m\]\$\[\033[0m\] '
+            if [ "x$SSH_CONNECTION" == "x" ]; then
+                PSCLR1='\[\033[1;36m\]'
+            else
+                PSCLR1='\[\033[1;32m\]'
+            fi
+            PS1='\[\033[1;33m\]\u'$PSCLR1'@\h:\[\033[1;39m\]\w\n'$PSCLR1'\t'$GIT_BRANCH' \[\033[1;39m\]\$\[\033[0m\] '
             eval `dircolors -b`
 	    ;;
 	*)
