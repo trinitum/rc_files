@@ -22,7 +22,14 @@ fi
 
 # If running interactively, then:
 if [ "$PS1" ]; then
-    alias ls='ls --color=auto'
+    case `uname` in
+        FreeBSD)
+            alias ls=`ls -G`
+            ;;
+        Linux)
+            alias ls=`ls --color=auto`
+            ;;
+    esac
     alias ll='ls -l'
     alias lh='ls -lh'
     alias la='ls -A'
@@ -52,7 +59,7 @@ if [ "$PS1" ]; then
                 PSCLR1='\[\033[1;32m\]'
             fi
             PS1='\[\033[1;33m\]\u'$PSCLR1'@\h:\[\033[1;39m\]\w\n'$PSCLR1'\t'$GIT_BRANCH' \[\033[1;39m\]\$\[\033[0m\] '
-            eval `dircolors -b`
+            [ -x /usr/bin/dircolors ] && eval `dircolors -b`
 	    ;;
 	*)
 	    PS1='\u@\h:\w'$GIT_BRANCH' \$ '
