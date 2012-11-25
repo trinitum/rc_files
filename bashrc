@@ -24,10 +24,10 @@ fi
 if [ "$PS1" ]; then
     case `uname` in
         FreeBSD)
-            alias ls=`ls -G`
+            alias ls='ls -G'
             ;;
         Linux)
-            alias ls=`ls --color=auto`
+            alias ls='ls --color=auto'
             ;;
     esac
     alias ll='ls -l'
