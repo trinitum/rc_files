@@ -54,7 +54,11 @@ if [ "$PS1" ]; then
     case $TERM in
         xterm*|rxvt*|linux*|screen*)
             if [ "x$SSH_CONNECTION" == "x" ]; then
-                PSCLR1='\[\033[1;36m\]'
+                if [ "x$SUDO_USER" == "x" ]; then
+                    PSCLR1='\[\033[1;36m\]'
+                else
+                    PSCLR1='\[\033[1;31m\]'
+                fi
             else
                 PSCLR1='\[\033[1;32m\]'
             fi
