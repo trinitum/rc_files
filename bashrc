@@ -71,3 +71,4 @@ if [ "$PS1" ]; then
     esac
 fi
 [ -f ~/perl5/perlbrew/etc/bashrc ] && source ~/perl5/perlbrew/etc/bashrc
+[ -f ~/.bashrc_local ] && source ~/.bashrc_local
