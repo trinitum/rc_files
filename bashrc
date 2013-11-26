@@ -1,5 +1,5 @@
 export EDITOR='/usr/bin/vim'
-export PAGER='/usr/bin/less'
+export PAGER='/usr/bin/less -R'
 export CVSROOT='/home/cvsroot'
 export PYTHONSTARTUP='/home/zwon/.pythonrc'
 export EMAIL='[%full_name%] <[%email_address%]>'
