@@ -41,7 +41,7 @@ if [ "$PS1" ]; then
     alias vimrc='vim ~/.bashrc'
     alias src='source ~/.bashrc'
     alias eog='eog 2>/dev/null'
-    alias s='screen -R -D'
+    alias s='tmux new -AD -s default'
     pack() { ps ax | grep "$1"; }
 
     if declare -f __git_ps1 >/dev/null ; then
