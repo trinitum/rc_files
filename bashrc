@@ -43,6 +43,7 @@ if [ "$PS1" ]; then
     alias eog='eog 2>/dev/null'
     alias s='tmux new -AD -s default'
     pack() { ps ax | grep "$1"; }
+    pmver() { perl -M$1 -E"say $1->VERSION"; }
 
     if declare -f __git_ps1 >/dev/null ; then
         GIT_BRANCH='$(__git_ps1)'
