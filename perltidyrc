@@ -1,4 +1,6 @@
--l 100 	# 100 characters per line
+-l 76 	# 76 characters per line
+-vmll   # --variable-maximum-line-length
 -nolq   # --nooutdent-long-lines
 -nasc   # --noadd-semicolons
 -ndsm   # --nodelete-semicolons
+-cab=0  # --comma-arrow-breakpoints=0
