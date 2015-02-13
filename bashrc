@@ -44,6 +44,7 @@ if [ "$PS1" ]; then
     alias s='tmux new -AD -s default'
     pack() { ps ax | grep "$1"; }
     pmver() { perl -M$1 -E"say $1->VERSION"; }
+    epoch() { date --date @$1 +"%F %T %Z %:z"; TZ=UTC date --date @$1 +"%F %T %Z"; }
 
     if declare -f __git_ps1 >/dev/null ; then
         GIT_BRANCH='$(__git_ps1)'
