@@ -55,16 +55,21 @@ if [ "$PS1" ]; then
 
     case $TERM in
         xterm*|rxvt*|linux*|screen*)
+            XTERM_TITLE=''
             if [ "x$SSH_CONNECTION" == "x" ]; then
+                if [ $TERM == 'xterm' ]; then
+                    XTERM_TITLE='\[\033]0;\w\007\]'
+                fi
                 if [ "x$SUDO_USER" == "x" ]; then
                     PSCLR1='\[\033[1;36m\]'
                 else
                     PSCLR1='\[\033[1;31m\]'
                 fi
             else
+                XTERM_TITLE='\[\033]0;\h:\w\007\]'
                 PSCLR1='\[\033[1;32m\]'
             fi
-            PS1='\[\033[1;33m\]\u'$PSCLR1'@\h:\[\033[1;39m\]\w\n'$PSCLR1'\t'$GIT_BRANCH' \[\033[1;39m\]\$\[\033[0m\] '
+            PS1=$XTERM_TITLE'\[\033[1;33m\]\u'$PSCLR1'@\h:\[\033[1;39m\]\w\n'$PSCLR1'\t'$GIT_BRANCH' \[\033[1;39m\]\$\[\033[0m\] '
             [ -x /usr/bin/dircolors ] && eval `dircolors -b`
 	    ;;
 	*)
