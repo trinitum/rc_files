@@ -77,6 +77,12 @@ if [ "$PS1" ]; then
 	    ;;
     esac
 fi
-[ -d ~/go/bin ] && export GOROOT="$HOME/go" && export GOPATH=$GOROOT && PATH="$GOROOT/bin:$PATH"
+
+if [ -d /usr/local/go ]; then
+    export GOROOT=/usr/local/go
+    PATH="$GOROOT/bin:$PATH"
+    [ -d ~/go/bin ] && export GOPATH="$HOME/go" && PATH="$GOPATH/bin:$PATH"
+fi
+
 [ -f ~/perl5/perlbrew/etc/bashrc ] && source ~/perl5/perlbrew/etc/bashrc
 [ -f ~/.bashrc_local ] && source ~/.bashrc_local
