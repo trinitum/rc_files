@@ -77,5 +77,6 @@ if [ "$PS1" ]; then
 	    ;;
     esac
 fi
+[ -d ~/go/bin ] && PATH="~/go/bin:$PATH"
 [ -f ~/perl5/perlbrew/etc/bashrc ] && source ~/perl5/perlbrew/etc/bashrc
 [ -f ~/.bashrc_local ] && source ~/.bashrc_local
