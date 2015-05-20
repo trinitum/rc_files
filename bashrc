@@ -79,9 +79,9 @@ if [ "$PS1" ]; then
 fi
 
 if [ -d /usr/local/go ]; then
+    [ -d ~/go ] && export GOPATH="$HOME/go" && PATH="$PATH:$GOPATH/bin"
     export GOROOT=/usr/local/go
-    PATH="$GOROOT/bin:$PATH"
-    [ -d ~/go ] && export GOPATH="$HOME/go" && PATH="$GOPATH/bin:$PATH"
+    PATH="$PATH:$GOROOT/bin"
 fi
 
 [ -f ~/perl5/perlbrew/etc/bashrc ] && source ~/perl5/perlbrew/etc/bashrc
