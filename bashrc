@@ -81,7 +81,7 @@ fi
 if [ -d /usr/local/go ]; then
     export GOROOT=/usr/local/go
     PATH="$GOROOT/bin:$PATH"
-    [ -d ~/go/bin ] && export GOPATH="$HOME/go" && PATH="$GOPATH/bin:$PATH"
+    [ -d ~/go ] && export GOPATH="$HOME/go" && PATH="$GOPATH/bin:$PATH"
 fi
 
 [ -f ~/perl5/perlbrew/etc/bashrc ] && source ~/perl5/perlbrew/etc/bashrc
