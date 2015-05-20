@@ -6,7 +6,7 @@ export EMAIL='[%full_name%] <[%email_address%]>'
 export LC_MESSAGES=C
 
 HISTCONTROL=ignoreboth:erasedups
-HISTFILESIZE=5000
+HISTFILESIZE=unlimited
 HISTTIMEFORMAT="%v %T "
 
 shopt -s cdable_vars checkwinsize
