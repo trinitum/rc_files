@@ -11,3 +11,4 @@ install:
 		sed "s/\[%full_name%\]/$$NAME/" $$file | \
 		sed "s/\[%email_address%\]/$$MAIL/" >~/.$$file; \
 	done
+	mkdir -p ~/.config/git && mv ~/.gitignore ~/.config/git/ignore
