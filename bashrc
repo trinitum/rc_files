@@ -42,6 +42,7 @@ if [ "$PS1" ]; then
     alias src='source ~/.bashrc'
     alias eog='eog 2>/dev/null'
     alias s='tmux new -AD -s default'
+    alias tmw='tmux rename-window "$(basename "$(pwd)")"'
     pack() { ps ax | grep "$1"; }
     pmver() { perl -M$1 -E"say $1->VERSION"; }
     epoch() { date --date @$1 +"%F %T %Z %:z"; TZ=UTC date --date @$1 +"%F %T %Z"; }
