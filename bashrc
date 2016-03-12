@@ -38,7 +38,16 @@ if [ "$PS1" ]; then
     alias s='tmux new -AD -s default'
     alias tmw='tmux rename-window "$(basename "$(pwd)")"'
     pmver() { perl -M$1 -E"say $1->VERSION"; }
-    epoch() { date --date @$1 +"%F %T %Z %:z"; TZ=UTC date --date @$1 +"%F %T %Z"; }
+    epoch() {
+        date --date @$1 +"%F %T %Z %:z"
+        TZ=UTC date --date @$1 +"%F %T %Z"
+    }
+    ssht() {
+        [ -n $TMUX ] && tmux rename-window "$*"
+        command ssh "$@" \
+            -t 'mesg n; which tmux && ( tmux attach || tmux new ) || bash'
+        [ -n $TMUX ] && tmux set-window-option -q automatic-rename "on"
+    }
 
     if declare -f __git_ps1 >/dev/null ; then
         GIT_BRANCH='$(__git_ps1)'
