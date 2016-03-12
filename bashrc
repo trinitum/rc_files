@@ -1,7 +1,5 @@
 export EDITOR='/usr/bin/vim'
 export PAGER='/usr/bin/less -R'
-export CVSROOT='/home/cvsroot'
-export PYTHONSTARTUP='/home/zwon/.pythonrc'
 export EMAIL='[%full_name%] <[%email_address%]>'
 export LC_MESSAGES=C
 
@@ -32,18 +30,13 @@ if [ "$PS1" ]; then
     esac
     alias ll='ls -l'
     alias lh='ls -lh'
-    alias la='ls -A'
-    alias ns='netstat --inet --inet6 -anp'
     alias nse='sudo netstat -tanp | grep -v LISTEN'
     alias nsl='sudo netstat -tanp | grep LISTEN'
-    alias nsu='sudo netstat -uanp'
-    alias nsr='netstat -rn'
     alias vimrc='vim ~/.bashrc'
     alias src='source ~/.bashrc'
-    alias eog='eog 2>/dev/null'
+    alias eog='gpicview'
     alias s='tmux new -AD -s default'
     alias tmw='tmux rename-window "$(basename "$(pwd)")"'
-    pack() { ps ax | grep "$1"; }
     pmver() { perl -M$1 -E"say $1->VERSION"; }
     epoch() { date --date @$1 +"%F %T %Z %:z"; TZ=UTC date --date @$1 +"%F %T %Z"; }
 
