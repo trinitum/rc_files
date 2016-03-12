@@ -70,6 +70,8 @@ if [ "$PS1" ]; then
 	    PS1='\u@\h:\w'$GIT_BRANCH' \$ '
 	    ;;
     esac
+
+    mesg n
 fi
 
 if [ -d /usr/local/go ]; then
