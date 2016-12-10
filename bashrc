@@ -1,4 +1,8 @@
-export EDITOR='/usr/bin/vim'
+if [ -x /usr/local/bin/vim ]; then
+    export EDITOR='/usr/local/bin/vim'
+else
+    export EDITOR='/usr/bin/vim'
+fi
 export PAGER='/usr/bin/less -R'
 export EMAIL='[%full_name%] <[%email_address%]>'
 export LC_MESSAGES=C
