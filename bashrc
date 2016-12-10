@@ -21,7 +21,7 @@ fi
 # If running interactively, then:
 if [ "$PS1" ]; then
     case `uname` in
-        FreeBSD)
+        FreeBSD|Darwin)
             alias ls='ls -G'
             ;;
         Linux)
