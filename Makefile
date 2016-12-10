@@ -1,4 +1,4 @@
-RCFILES=bashrc bash_profile gitconfig gitignore indent.pro inputrc perltidyrc screenrc tmux.conf
+RCFILES=bashrc bash_profile gitconfig gitignore indent.pro inputrc perltidyrc tmux.conf
 
 default:
 	@echo "run make install EMAIL="name <e-mail>" if you want to install"
