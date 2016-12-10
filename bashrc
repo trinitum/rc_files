@@ -11,15 +11,11 @@ HISTCONTROL=ignoreboth:erasedups
 HISTFILESIZE=unlimited
 HISTTIMEFORMAT="%v %T "
 
-shopt -s cdable_vars checkwinsize
+shopt -s checkwinsize
 
 # enable bash completion in interactive shells
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
-fi
-
-if [ -x ~/bin/perldoc-complete.pl ] ; then
-    complete -C perldoc-complete.pl -o nospace -o default perldoc
 fi
 
 # If running interactively, then:
@@ -34,10 +30,6 @@ if [ "$PS1" ]; then
     esac
     alias ll='ls -l'
     alias lh='ls -lh'
-    alias nse='sudo netstat -tanp | grep -v LISTEN'
-    alias nsl='sudo netstat -tanp | grep LISTEN'
-    alias vimrc='vim ~/.bashrc'
-    alias src='source ~/.bashrc'
     alias eog='gpicview'
     alias s='tmux new -AD -s default'
     alias tmw='tmux rename-window "$(basename "$(pwd)")"'
