@@ -9,7 +9,17 @@ export LC_MESSAGES=C
 
 HISTCONTROL=ignoreboth:erasedups
 HISTFILESIZE=unlimited
-HISTTIMEFORMAT="%v %T "
+HISTSIZE=1000
+unset HISTTIMEFORMAT
+
+function dedup_history() {
+    local TMPH=`tempfile -m 0600`
+    [ -z "$TMPH" ] && return
+    tac ~/.bash_history | grep -v '^#' | awk '! x[$0]++' | tac >$TMPH
+    mv $TMPH ~/.bash_history
+}
+
+dedup_history
 
 shopt -s checkwinsize
 
