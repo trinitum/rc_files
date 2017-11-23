@@ -95,5 +95,9 @@ if [ -d /usr/local/go ]; then
     PATH="$PATH:$GOROOT/bin"
 fi
 
+if [ -d ~/.cargo/bin ]; then
+    PATH="$PATH:~/.cargo/bin"
+fi
+
 [ -f ~/perl5/perlbrew/etc/bashrc ] && source ~/perl5/perlbrew/etc/bashrc
 [ -f ~/.bashrc_local ] && source ~/.bashrc_local
