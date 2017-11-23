@@ -49,10 +49,10 @@ if [ "$PS1" ]; then
         TZ=UTC date --date @$1 +"%F %T %Z"
     }
     ssht() {
-        [ -n $TMUX ] && tmux rename-window "$*"
+        [ -n "$TMUX" ] && tmux rename-window "$*"
         command ssh "$@" \
-            -t 'mesg n; which tmux && ( tmux attach || tmux new ) || bash'
-        [ -n $TMUX ] && tmux set-window-option -q automatic-rename "on"
+            -t 'which tmux && ( tmux attach || tmux new ) || bash'
+        [ -n "$TMUX" ] && tmux set-window-option -q automatic-rename "on"
     }
 
     if declare -f __git_ps1 >/dev/null ; then
