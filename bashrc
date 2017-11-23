@@ -13,9 +13,9 @@ HISTSIZE=1000
 unset HISTTIMEFORMAT
 
 function dedup_history() {
-    local TMPH=`tempfile -m 0600`
+    local TMPH=`mktemp`
     [ -z "$TMPH" ] && return
-    tac ~/.bash_history | grep -v '^#' | awk '! x[$0]++' | tac >$TMPH
+    tail -r ~/.bash_history | grep -v '^#' | awk '! x[$0]++' | tail -r >$TMPH
     mv $TMPH ~/.bash_history
 }
 
