@@ -97,7 +97,7 @@ fi
 
 if [ -d ~/.cargo/bin ]; then
     PATH="$PATH:$HOME/.cargo/bin"
-    which -s rustc && export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+    which rustc >/dev/null && export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 fi
 
 [ -f ~/perl5/perlbrew/etc/bashrc ] && source ~/perl5/perlbrew/etc/bashrc
