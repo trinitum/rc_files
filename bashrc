@@ -12,10 +12,12 @@ HISTFILESIZE=unlimited
 HISTSIZE=1000
 unset HISTTIMEFORMAT
 
+which tac >/dev/null || function tac() { tail -r -- "$@"; }
+
 function dedup_history() {
     local TMPH=`mktemp`
     [ -z "$TMPH" ] && return
-    tail -r ~/.bash_history | grep -v '^#' | awk '! x[$0]++' | tail -r >$TMPH
+    tac ~/.bash_history | grep -v '^#' | awk '! x[$0]++' | tac >$TMPH
     mv $TMPH ~/.bash_history
 }
 
