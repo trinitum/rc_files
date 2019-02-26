@@ -11,6 +11,10 @@
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git vi-mode z)
 
+if [[ -f ~/.zshrc.local ]]; then
+    source ~/.zshrc.local
+fi
+
 source $ZSH/oh-my-zsh.sh
 local ret_status="%(?:%{$fg_bold[green]%}✔ :%{$fg_bold[red]%}✖ )"
 PROMPT='${ret_status}%F{yellow}%n%F{cyan}@%m:%F{white}%d
@@ -67,8 +71,4 @@ fi
 if [[ -d ~/.cargo/bin ]]; then
     PATH="$PATH:$HOME/.cargo/bin"
     which rustc >/dev/null && export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
-fi
-
-if [[ -f ~/.zshrc.local ]]; then
-    source ~/.zshrc.local
 fi
