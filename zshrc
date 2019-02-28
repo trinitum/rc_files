@@ -16,6 +16,15 @@ if [[ -f ~/.zshrc.local ]]; then
 fi
 
 source $ZSH/oh-my-zsh.sh
+
+unsetopt autocd
+setopt caseglob
+setopt casematch
+unsetopt sharehistory
+unsetopt extendedhistory
+setopt histignorealldups
+setopt histignorespace
+
 local ret_status="%(?:%{$fg_bold[green]%}✔ :%{$fg_bold[red]%}✖ )"
 PROMPT='${ret_status}%F{yellow}%n%F{cyan}@%m:%F{white}%d
 %F{cyan}%T $(git_prompt_info)$(git_repo_status)%F{white}%B%%%{$reset_color%} '
