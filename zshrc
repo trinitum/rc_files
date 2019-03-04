@@ -18,6 +18,7 @@ fi
 source $ZSH/oh-my-zsh.sh
 
 unsetopt autocd
+setopt noautomenu
 setopt caseglob
 setopt casematch
 unsetopt sharehistory
