@@ -1,4 +1,5 @@
 autoload epoch
+autoload zcalc
 
 for file in ~/.zsh/lib/*.zsh; do
     source $file
