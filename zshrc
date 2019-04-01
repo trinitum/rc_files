@@ -22,6 +22,7 @@ setopt CASE_GLOB
 setopt CASE_MATCH
 setopt NO_FLOW_CONTROL
 setopt INTERACTIVE_COMMENTS
+unsetopt NOMATCH
 
 alias lh='ls -lh'
 alias eog=gpicview
