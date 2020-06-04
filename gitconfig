@@ -3,6 +3,8 @@
 	email = [%email_address%]
 [push]
 	default = current
+[pull]
+        rebase = true
 [color]
 	ui = auto
 [alias]
