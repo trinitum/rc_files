@@ -13,7 +13,7 @@
 	co = checkout
 	ci = commit
 	st = status
-	gr = log --pretty=\"format:%C(yellow)%h %C(white bold)%an%Creset %C(green)%s%Creset\" --graph
+	gr = log --pretty=\"format:%C(yellow)%h%C(bold)%d %C(white)%an%Creset %C(green)%s%Creset\" --graph
 	assume = update-index --assume-unchanged
 	unassume = update-index --no-assume-unchanged
 	assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
