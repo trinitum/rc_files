@@ -5,9 +5,9 @@ default:
 	exit 1
 
 install:
-	NAME=`perl -e'print q($(EMAIL)) =~ /^(.*) </'`; \
-	MAIL=`perl -e'print q($(EMAIL)) =~ /<(.*)>/'`; \
-	read -p "Using name $$NAME and e-mail $$EMAIL, type 'yes' to confirm: " confirm && \
+	NAME=`echo $$EMAIL | sed 's/ <.*>//'` && \
+	MAIL=`echo $$EMAIL | sed 's/^.*<\(.*\)>$$/\1/'` && \
+	read -p "Using name $$NAME and e-mail $$MAIL, type 'yes' to confirm: " confirm && \
 	[ x$$confirm = "xyes" ] && \
 	for file in $(RCFILES); do \
 		sed "s/\[%full_name%\]/$$NAME/" $$file | \
