@@ -1,5 +1,6 @@
 autoload epoch
 autoload zcalc
+autoload -U compinit; compinit
 
 for file in ~/.zsh/lib/*.zsh; do
     source $file
