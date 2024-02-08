@@ -15,3 +15,10 @@ install:
 	done
 	mkdir -p ~/.zsh && rm -rf ~/.zsh/* && cp -r zsh/* ~/.zsh/
 	mkdir -p ~/.config/git && mv ~/.gitignore ~/.config/git/ignore
+
+install-user-ubuntu:
+	[ -f /etc/debian_version ]
+	sudo apt-get update
+	sudo apt-get dist-upgrade
+	sudo apt-get install tmux vim zsh curl ripgrep fzf bat fd-find
+	sudo apt-get purge nano
