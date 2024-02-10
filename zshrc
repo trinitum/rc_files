@@ -15,6 +15,7 @@ fi
 export EMAIL='[%full_name%] <[%email_address%]>'
 export PAGER="/usr/bin/less -R"
 export LC_MESSAGES=C
+export LANG=en_US.UTF-8
 
 setopt NO_AUTO_CD
 setopt NO_AUTO_MENU
